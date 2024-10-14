@@ -47,7 +47,7 @@ Resources:
           sudo dnf install -y redis6
           sudo systemctl start redis6
           cd /home/ec2-user
-          echo "redis6-cli -h $(aws cloudformation describe-stacks --stack-name $(aws cloudformation describe-stacks --query 'Stacks[0].StackName' --output text) --query 'Stacks[].Outputs[?OutputKey== ClusterEndpoint].OutputValue' --output text) --tls -p 6379" >> valkey.sh
+          echo "redis6-cli -h $(aws cloudformation describe-stacks --stack-name $(aws cloudformation describe-stacks --query 'Stacks[0].StackName' --output text) --query 'Stacks[].Outputs[?OutputKey== `ClusterEndpoint`].OutputValue' --output text) --tls -p 6379" >> valkey.sh
           chmod u+x valkey.sh
       Tags:
         - Key: 'Name'
