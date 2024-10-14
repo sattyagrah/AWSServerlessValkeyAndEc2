@@ -51,7 +51,7 @@ Resources:
           chmod u+x valkey.sh
       Tags:
         - Key: 'Name'
-        Value: 'Ec2InstanceForValkey'
+          Value: 'Ec2InstanceForValkey'
     DependsOn:
       - 'ValkeyServerless'
     
@@ -64,8 +64,8 @@ Resources:
       ServerlessCacheName: 'ValkeyServerless'
       SubnetIds: !Ref 'SubnetId'
       Tags:
-        - Value: 'Name'
-          Key: 'ValkeyServerless'
+        - Key: 'Name'
+          Value: 'ValkeyServerless'
 
 Outputs:
   InstanceId:
